@@ -1,0 +1,520 @@
+
+/*************************************
+      GENERAL -------------- GENERAL
+ **************************************/
+
+ * {
+	box-sizing: border-box;
+ }
+
+ html, body {
+	height: 100%;
+	overflow: hidden;
+ }
+
+ body {
+ 	display: flex;
+ 	background-color: rgb(256,86,77);
+ 	font: 1em/1.5 'Arial';
+ }
+
+body, div, button, p, h1, h3, h4 {
+ 	margin: 0;
+}
+
+ button {
+ 	border: none;
+ 	outline:  none;
+ 	background-color: transparent;
+ }
+
+ button, .exit {
+ 	cursor: pointer;
+ }
+
+ a {
+ 	text-decoration: none;
+ }
+
+ .letter {
+ 	display: inline-block;
+ }
+
+ /********************************************
+    MAIN-WRAPPER -------------- MAIN-WRAPPER;
+ ********************************************/
+
+.div-stylesheet {
+	border-radius: 5px;
+	background-color: white;
+	padding: 30px 15px 20px;
+}
+
+ .main-wrapper {
+ 	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+ 	margin: auto;
+	width: 90%;
+	height: 55%;
+	text-align: center;
+	box-shadow: inset -2px -2px 5px 1px rgba(0,0,0,.7);	
+ }
+
+ h1 {
+ 	border: 5px solid rgb(256,86,77);
+ 	font-size: 4em;
+ 	letter-spacing: 15px;
+ 	padding: 20px 0 20px 10px;
+ }
+
+ .button {
+ 	display: block;
+ 	border: none;
+ 	color: white;
+ 	background-color: rgb(256,86,77);
+ 	padding: 10px 0;
+ 	border-radius: 5px;
+ 	box-shadow: 0px 5px 15px black;
+ 	font-weight :bold;
+ 	font-size: 1.5em;
+ 	animation: glowing 2s 2s infinite;
+ 	transition: transform .5s, background .5s;
+ 	width: 90%;
+ 	margin: 0 auto;
+ }
+
+ .info {
+ 	animation: none;
+ 	transition: transform .5s;
+ 	padding: 15px 0;
+ }
+
+ .div-info {
+ 	padding: 0px 15px 35px;
+ 	position: absolute;
+ 	top: 10%;
+ 	width: 60%;
+	max-height: 90%;
+ 	left: 20%;
+ 	box-shadow: 22px 22px 5px rgba(0,0,0,.7);	
+ 	transform: translateY(-250%);
+ 	transition: transform .5s;
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: space-between;
+ }
+
+ .div-info h4, .div-info h3 {
+ 	text-decoration: underline;
+ 	margin-top: 10px;
+ }
+
+ .div-info h3 {
+ 	font-size: 1.7em;
+ }
+
+ .div-info h4 {
+ 	font-size: 1.1em;
+ }
+
+ .exit{
+ 	position: absolute;
+ 	right: 10px;
+ 	top: 10px;
+ 	color: black;
+ 	font-size: 1.5em;
+ }
+
+ .mobile {
+ 	display: none;
+ }
+
+
+/**********************************************
+  PSEUDO-CLASSES -------------- PSEUDO-CLASSES;
+ **********************************************/
+
+.button:focus {
+	outline: none;
+}
+
+ .play:focus {
+ 	animation: fadeOutUp 1s;
+ }
+
+ .info:focus {
+ 	animation: none;
+
+ }
+
+ .info:active {
+ 	transform: scale(.95);
+ }
+
+ .exit:hover {
+ 	color: rgb(256,86,77);
+ }
+ 
+
+/**********************************************
+  KEY-FRAMES -------------- KEY-FRAMES;
+ **********************************************/
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes sliding {
+ 	from {
+ 		transform: translateX(2000%);
+ 	}
+
+ 	to {
+ 		transform: translateX(0);
+ 	}
+ }
+
+@keyframes glowing {
+    
+    0% { transform: translateY(0); }
+	20% { transform: translateY(-1px); }
+	25% { background-color: rgb(236,66,57) }
+	30% { box-shadow: 0px 10px 25px black; }
+	45% { box-shadow: 0px 5px 15px black; }
+	50% { transform: translateY(0); }
+	100% { transform: translateY(0); }
+}
+
+@keyframes scaling {
+	0% { transform: scale(1);}
+	20% { transform: scale(1.05);}
+	50% { transform: scale(1);}
+	100% { transform: scale(1)}
+}
+
+
+/**********************************************
+  MEDIA-QUERRIES -------------- MEDIA-QUERRIES;
+ **********************************************/
+
+ 		/*******************************************
+  		  SIZE: 350PX  -------------- SIZE: 350PX;
+ 		********************************************/
+
+@media screen and (min-width: 320px) {
+	
+	.main-wrapper {
+		height:60%;
+	}
+
+	h1 {
+		font-size: 2.9em;
+	}
+
+	.button {
+		padding: 15px 0;
+	}
+
+	.play {
+		padding: 10px 0
+	}
+
+	.div-info {
+		width:90%;
+		left: 5%;
+		top: 5%;
+		padding-bottom: 10px;
+	}
+
+	.div-info h3 {
+		font-size: 1.7em;
+	}
+
+	.div-info h4 {
+		font-size: 1.3em;
+	}
+
+	.div-info p {
+		font-size: 1em;
+		margin-top: 10px
+	}
+}
+
+@media screen and (min-width: 370px) {
+	
+	h1 {
+		font-size: 3.6em;
+	}
+
+	.div-info {
+		width: 80%;
+		left: 10%;
+		top: 5%;
+		padding-bottom: 15px;
+	}
+
+	.div-info h3 {
+		font-size: 1.8em;
+	}
+
+	.div-info h4 {
+		font-size: 1.4em;
+		margin-bottom: 5px;
+	}
+
+	.div-info p {
+		font-size: 1.1em;
+	}
+}
+
+
+
+@media only screen and (min-width: 560px) and (orientation:landscape) {
+	.main-wrapper {
+		height: 90%;
+	}
+	
+	.div-info {
+		padding-top: 5px;
+	}
+
+	.div-info h3, .div-info h4 {
+		margin: 5px 0 0;
+	}
+
+	.div-info h3 {
+		font-size: 1.3em;
+	}
+
+	.div-info h4 {
+		font-size: 1em;
+	}
+
+	.div-info p {
+		font-size: .8em;
+	}
+
+	.button {
+		padding:10px 0;
+		font-size: 1.1em;
+	}
+
+	.play {
+		padding: 5px 0;
+	}
+}
+
+
+ 		/******************************************
+  		  	SIZE: 750PX --- ORIENTATION:LANDSCAPE
+ 		********************************************/
+
+@media only screen and (min-width: 660px) and (orientation: landscape) {
+	
+	.main-wrapper {
+		height:80%;
+		padding: 10px 15px;
+		justify-content: space-around;
+	}
+
+	h1 {
+		font-size: 4em;
+		padding: 5px 0;
+	}
+
+	.button {
+		width: 100%;
+		font-size: 1.4em;
+	}
+
+	.div-info {
+		width: 70%;
+		max-height: 90%;
+		top: 5%;
+		left: 15%;
+		box-shadow: 12px 20px 5px rgba(0,0,0,.7);
+	}
+
+	.mobile {
+		display: none;
+	}
+
+}
+
+
+ 		/***************************************************
+  		  SIZE: 750PX - 780PX; -------- SIZE: 750PX - 780PX;
+ 		*****************************************************/
+
+@media screen and (min-width: 750px) and (max-width: 780px) {
+	.main-wrapper {
+		height:60%;
+	}
+
+	h1 {
+		font-size: 7em;
+	}
+
+	.button {
+		display: block;
+		padding: 40px 0;
+		font-size: 2.2em;
+	}
+
+	.info {
+		padding: 45px 0;
+	}
+
+	.div-info {
+		width: 70%;
+		left: 15%;
+		padding: 5;
+	}
+
+	.div-info h3 {
+		font-size: 2.5em;
+	}
+
+	.div-info h4 {
+		font-size: 2em;
+		margin-bottom: 10px;
+	}
+
+	.div-info p {
+		font-size: 1.7em;
+	}
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1024px) and (orientation:landscape) {
+	.main-wrapper {
+		height: 70%;
+	}
+
+	h1 {
+		font-size: 6em;
+	}
+
+	.button {
+		display: block;
+		padding: 15px 0;
+		font-size: 2em;
+		width: 100%;
+	}
+
+	.play {
+		padding: 10px 0;
+	}
+
+	.div-info {
+		padding: 20px;
+		top: 3%;
+	}
+
+	.div-info h3 {
+		font-size: 2.5em;
+	}
+
+	.div-info h4 {
+		font-size: 2em;
+		margin-bottom: 5px;
+	}
+
+	.div-info p {
+		font-size: 1.7em;
+	}
+}	
+
+
+ 	/***********************************************
+  	    SIZE: DESKTOP  -------------- SIZE: DESKTOP;
+ 	************************************************/
+
+
+@media screen and (min-width: 1025px) {
+
+	.div-info {
+		width: 40%;
+		left: 30%;	
+	}
+
+	.div-info h3 {
+		font-size: 2em;
+	}
+
+	.div-info h4 {
+		font-size: 1.5em;
+	}
+
+	.div-info p {
+		font-size: 1.25em;
+	}
+
+	.mobile {
+		display: block;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		background-color: white;
+		padding:5px;
+		border-radius: 5px;
+		border: 1px solid;
+		box-shadow: 5px 5px 5px rgba(0,0,0,.7);
+		animation: scaling 2s 2s infinite;
+	}
+
+	h1 {
+		font-size: 6em;
+	}
+
+	.button {
+		font-size: 1.5em;
+		padding:20px 0;
+	}
+
+	.info {
+		padding: 25px 0
+	}
+	
+}
+
+@media screen and (min-width: 1290px) {
+
+	body, html {
+		max-width: 1280px;
+		max-height: 600px;
+		margin: auto;
+	}
+
+	.main-wrapper {
+		margin-top: 10%
+	}
+
+	h1 {
+		font-size: 6em;
+	}
+
+	.div-info {
+		width: 60%;
+		left: 20%;
+	}
+
+	.div-info h3 {
+		font-size: 3em;
+	}
+
+	.div-info h4 {
+		font-size: 2em;
+	}
+
+	.div-info p {
+		font-size: 1.8em;
+	}
+}
