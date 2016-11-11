@@ -415,13 +415,20 @@ input[type="text"] {
 				width: 80%;
 				left: 10%;
 				top: 0;
-				padding: 2% 5%;
+				padding: 4% 5%;
 				height: 100%;
 			}
 
 			.userInterface h3, .pauseMode h3, .lostMode h3 {
-				margin-bottom: 30px;
+				margin-bottom: 20px;
+				font-size: 1em;
 			}
+
+			.userInterface .button, .lostMode .button, .pauseMode .button {
+				margin-bottom: 10px;
+				font-size: 1em;
+			}
+
 
 		}
 
@@ -473,12 +480,12 @@ input[type="text"] {
 
 			.userInterface h3, .lostMode h3, .pauseMode h3 {
 			 	margin-bottom: 20px;
-				font-size: 1.5em;
+				font-size: 1.2em;
 			}
 
 			.userInterface .button, .lostMode .button, .pauseMode .button {
-				margin-bottom: 20px;
-				font-size: 1.3em;
+				margin-bottom: 15px;
+				font-size: 1.1em;
 			}
 
 			.lostMode {
@@ -669,5 +676,4 @@ input[type="text"] {
 			}
 
 		}
-
-		
+	
