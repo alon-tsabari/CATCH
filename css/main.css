@@ -91,9 +91,9 @@ body, div, button, p, h1, h3, h4 {
  }
 
  .div-info {
- 	padding: 0px 15px 35px;
+ 	padding: 0px 5px 35px 10px;
  	position: absolute;
- 	top: 10%;
+ 	top: 5%;
  	width: 60%;
 	max-height: 90%;
  	left: 20%;
@@ -231,7 +231,6 @@ body, div, button, p, h1, h3, h4 {
 		width:90%;
 		left: 5%;
 		top: 5%;
-		padding-bottom: 10px;
 	}
 
 	.div-info h3 {
@@ -419,16 +418,16 @@ body, div, button, p, h1, h3, h4 {
 	}
 
 	.div-info h3 {
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 
 	.div-info h4 {
-		font-size: 2em;
+		font-size: 1.5em;
 		margin-bottom: 5px;
 	}
 
 	.div-info p {
-		font-size: 1.7em;
+		font-size: 1.3em;
 	}
 }	
 
@@ -442,7 +441,8 @@ body, div, button, p, h1, h3, h4 {
 
 	.div-info {
 		width: 40%;
-		left: 30%;	
+		left: 30%;
+		padding: 20px;	
 	}
 
 	.div-info h3 {
@@ -504,17 +504,5 @@ body, div, button, p, h1, h3, h4 {
 	.div-info {
 		width: 60%;
 		left: 20%;
-	}
-
-	.div-info h3 {
-		font-size: 3em;
-	}
-
-	.div-info h4 {
-		font-size: 2em;
-	}
-
-	.div-info p {
-		font-size: 1.8em;
 	}
 }
