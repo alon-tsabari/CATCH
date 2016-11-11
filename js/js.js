@@ -218,7 +218,7 @@ var resetFunctions = {
 		},
 
 		hide: function() {
-			body.appendChild(pause);
+			container.appendChild(pause);
 			wrapper.className = 'wrapper animated fadeOutUp';
 		},
 
