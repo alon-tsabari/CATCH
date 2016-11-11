@@ -56,7 +56,7 @@ a {
 	border: 1px solid;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	border-radius: 5px;
 	position: relative;
 	text-align: center;
@@ -100,8 +100,8 @@ span {
 
 .clock {
 	position: absolute;
-	bottom: 10px;
 	right: -1px;
+	bottom: 10px;
 	padding: 5px 15px;
 	border-radius: 5px 0 0 5px;
 	color: white;
@@ -119,13 +119,26 @@ span {
 }
 
 /***************************************************
-     CLEAR-BUTTON -------------- CLEAR-BUTTON
+     BUTTONS --------------- BUTTONS
  ****************************************************/
+
+.pause, .play {
+	position: absolute;
+	right: -15px;
+	letter-spacing: -2px;
+	font-size: 2.5em;
+	color: white;
+	background-color: tomato;
+	transition: transform .5s;
+	border: 1px solid black;
+	padding: 2px 6px 2px 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
 
 .clear {
 	position: absolute;
-	top:-20px;
-	left:15px;
+	left: 20px;
 	border: 1px solid black;
 	background-color: tomato;
 	padding: 7px 10px;
@@ -133,6 +146,10 @@ span {
 	border-radius: 5px;
 	font-size: 1.5em;
 	transition: background .5s, transform .5s;
+}
+
+.pause, .play, .clear {
+	top: -25px;
 }
 
 /***************************************************
@@ -276,24 +293,6 @@ input[type="text"] {
 }
 
 
-/*************************************************************
-  PAUSE-AND-PLAY-BUTTONS -------------- PAUSE-AND-PLAY-BUTTONS
- *************************************************************/
-
-.pause, .play {
-	position: absolute;
-	right: 10px;
-	top: 70px;
-	letter-spacing: -2px;
-	font-size: 2.5em;
-	color: white;
-	background-color: tomato;
-	transition: transform .5s;
-	border: 1px solid black;
-	padding: 2px 6px 2px 5px;
-	border-radius: 5px;
-	cursor: pointer;
-}
 
 /*********************************
   STRIKES -------------- STRIKES;
@@ -308,8 +307,8 @@ input[type="text"] {
 
 .strikesHolder {
 	position: absolute;
-	left: 25px;
-	bottom: 100px;
+	bottom: 10px;
+	left: 0;
 }
 
 
@@ -328,47 +327,30 @@ input[type="text"] {
      MEDIA-QUERRIES -------------- MEDIA-QUERRIES
  ****************************************************/
 
-			/*****************************************
-              SIZE: 780PX; --- ORIENTATION: LANDSCAPE 
-             ******************************************/
-
-		
-		
-
-		/**************************************************
-	 	 	SIZE: 750PX - 800PX; ------- SIZE: 750PX - 800PX; IPAD
-		 ***************************************************/
-
-		
-
-		/*********************************************
-	 	 	SIZE: 400PX; -------------- SIZE: 400PX;
-		 **********************************************/
 		
 		@media screen and (min-width: 320px) {
 
 			.clear {
-				top: -30px;
-				left: 5px;
 				font-size: 1.2em;
+				left: 10px;
 			}
 
 			.pause, .play {
-				top: 50px;
-				right: 5px;
-				font-size: 2.1em;
+				font-size: 2em;
+				right: -10px;
 			}
 
 			.time {
 				font-size: .8em;
 			}
 
-			.clock {
+			.clock, .strikesHolder {
 				bottom: 10px;
 			}
 
 			.value {
-				margin-top: 5px;
+				margin-top: -60px;
+				font-size: 2em;
 			}
 
 			.userInterface h3 , .pauseMode h3, .lostMode h3 {
@@ -376,19 +358,18 @@ input[type="text"] {
 			}
 
 			.userInterface .button , .pauseMode .button, .lostMode .button {
-				font-size: 1em;
+				font-size: 1.1em;
 			}
 
-			.strikesHolder {
-				left: 0;
-				top: 90%;
-			}
 		}
 
 		@media screen and (min-width: 370px) {
+			.userInterface h3, .lostMode h3, .pauseMode h3 {
+				font-size: 1.5em;
+			}
 
-			.pause, .play {
-				top: 10%;
+			.userInterface .button, .lostMode .button, .pauseMode .button {
+				font-size: 1.3em;
 			}
 		}
 
@@ -400,27 +381,26 @@ input[type="text"] {
 		@media only screen and (min-width: 560px) and (orientation: landscape) {
 			
 			.container {
-				height: 85%;
+				height: 80%;
 				padding: 10px;
 			}
 
 			.box {
-				height: 80px;
+				height: 70px;
 			}
 
 			.value {
-				font-size: 2em;
+				font-size: 1.5em;
+				margin-top: 0;
 			}
 			
 			.pause, .play {
-				font-size:1.7em;
-				top: 70%;
-				right: 92%
+				font-size: 2em;
+				right: 62%;
 			}
 
-			.clear {
+			.clear, .pause, .play {
 				top: 90%;
-				left: 20px
 			}
 
 			.time {
@@ -428,43 +408,46 @@ input[type="text"] {
 			}
 
 			.strikesHolder {
-				left: 70%;
-				bottom: 15px;
-			}
-
-			.clock {
-				bottom: 15p ;
+				left: 75%;
 			}
 
 			.userInterface, .pauseMode, .lostMode {
 				width: 80%;
 				left: 10%;
 				top: 0;
-				padding: 5%;
+				padding: 2% 5%;
 				height: 100%;
 			}
 
 			.userInterface h3, .pauseMode h3, .lostMode h3 {
-				margin-top: 0;
+				margin-bottom: 30px;
 			}
 
 		}
 
 		@media only screen and (min-width: 660px) and (orientation: landscape) {
 
-			body {
-				align-items: center;
-			}
 
 			.container {
 				height:90%;
 				padding-top: 0%;
 			}
 
+			.box {
+				height: 100px;
+			}
+
 			.clear {
-				font-size: 1em;
-				top: 92%;
-				border: 2px solid white;
+				font-size: 1.1em;
+			}
+
+			.pause, .play {
+				right:62%;
+				font-size: 2em;
+			}
+
+			.pause, .play, .clear {
+				top: 90%;
 			}
 
 			.value {
@@ -475,18 +458,12 @@ input[type="text"] {
 				font-size: 1.5em;
 			}
 			
-
-			/************************************************
-			  USER-INTERFACE -------------- USER-INTERFACE;
-			************************************************/
-
-
 			.userInterface, .lostMode, .pauseMode {
 				width: 80%;
 				height: 100%;
 				top: 0;
 				left:10%;
-				padding:  5% 5%;
+				padding: 5%;
 		   }
 
 			input[type="text"] {
@@ -495,63 +472,22 @@ input[type="text"] {
 			}
 
 			.userInterface h3, .lostMode h3, .pauseMode h3 {
-			 	margin-bottom: 35px;
+			 	margin-bottom: 20px;
 				font-size: 1.5em;
 			}
 
-			.button {
-				width:80%;
-				border-radius: 2px;
+			.userInterface .button, .lostMode .button, .pauseMode .button {
+				margin-bottom: 20px;
 				font-size: 1.3em;
-				margin-bottom: 15px;
 			}
 
-		
-			/************************************************
-		         LOST-MODE -------------- LOST-MODE;
-		      ************************************************/
-			
 			.lostMode {
 				padding: 5% 10%;
 			}
 
-			.lostMode h3 {
-				margin: 0 0 30px;
-			}
-			
 			.mainPage {
 				margin-top: 10px;
 			}
-
-			/*************************************************************
-			  PAUSE-AND-PLAY-BUTTONS -------------- PAUSE-AND-PLAY-BUTTONS
-			 *************************************************************/
-
-			.pause, .play {
-				position: absolute;
-				right: 92%;
-				top: 75%;
-				letter-spacing: -2px;
-				font-size: 2em;
-				color: white;
-				background-color: tomato;
-				transition: transform .5s;
-				border: 2px solid white;
-				padding: 2px 6px 2px 5px;
-				border-radius: 5px;
-				z-index: 1;
-			}
-
-			/********************************
-			 STRIKES -------------- STRIKES;
-			*********************************/
-
-			 .strikesHolder {
-				position: absolute;
-				left: 80%;
-				bottom: 15px;
-			}
-
 		}
 
 		@media screen and (min-width: 750px) and (max-width: 800px) {
@@ -564,88 +500,94 @@ input[type="text"] {
 				height:150px;
 			}
 
-			.userInterface > input {
-				width: 75%;
-				font-size: 3em;
-			}
-
-			.userInterface > .button, .pauseMode > .button, .lostMode > .button {
-				margin-top: 40px;
-				padding: 30px 0;
-				font-size: 2em;
-				width: 80%;
-			}
-
-			.userInterface .button + .button, .pauseMode .button + .button, .lostMode .button + .button {
-				margin-top: 5%;
-			}
-
-			.userInterface h3, .lostMode h3, .pauseMode h3 {
-			 	margin-bottom: 50px;
-				font-size: 2.5em;
-			}
-			
 			.pause, .play {
-				font-size: 3em;
-				top: 12%;
-				right: 20px;
+				font-size: 3.5em;
+				right: -20px;	
 			}
 
 			.clear {
-				font-size: 2em;
+				font-size: 2.5em;
 				left: 20px;
 			}
 
+			.clear, .pause, .play {
+				top: -30px;
+			}
+
 			.clock {
-				bottom: 40px;
-				font-size: 2.5em;
+				font-size: 3em;
+			}
+			
+			.strikesHolder {
+				font-size: 2em;
+			}
+
+			.clock, .strikesHolder {
+				bottom: 30px;
 			}
 
 			.value {
 				font-size: 3.5em;
 			}
 
-			.strikesHolder {
-				left: 10px;
+			.userInterface , .lostMode , .pauseMode {
+				top: 15%;
+			}
+
+			.userInterface > input {
+				width: 75%;
+				font-size: 3em;
+			}
+
+			.userInterface > .button, .pauseMode > .button, .lostMode > .button {
+				margin-top: 10px;
+				padding: 30px 0;
 				font-size: 2em;
+				width: 80%;
+			}
+
+			.userInterface .button + .button, .pauseMode .button + .button, .lostMode .button + .button {
+				margin-top: 30px;
+			}
+
+			.userInterface h3, .lostMode h3, .pauseMode h3 {
+			 	margin-bottom: 40px;
+				font-size: 2.5em;
 			}
 		}
 
 		@media only screen and (min-width: 800px) and (max-width: 1030px) and (orientation: landscape) {
 			
-			.container {
-				justify-content: space-around
+			.box {
+				height: 200px;
 			}
 
 			.pause, .play {
-				top: 1%;
-				right: 30px;
 				font-size: 3em;
 			}
 
 			.clear {
-				top: -30px;
-				left: 20px;
 				font-size: 2em;
 			}
 
-			.clock {
-				bottom: 40px;
-				font-size: 2em;
+			.clear, .pause, .play {
+				top: 95%;
 			}
 
 			.value {
 				font-size: 4em;
 			}
 
+			.clock {
+				font-size: 3em;
+			}
+
 			.strikesHolder {
-				bottom: 20px;
-				left: 2%;
 				font-size: 2em;
 			}
 
-			.box {
-				height:150px;
+			.userInterface , .lostMode , .pauseMode {
+				padding-top: 2%;
 			}
 
 			.userInterface > input {
@@ -658,15 +600,19 @@ input[type="text"] {
 				font-size: 2.5em;
 			}
 
+			.userInterface h3 {
+				font-size:3em;
+			}
+
 			.userInterface > .button, .pauseMode > .button, .lostMode > .button {
-				margin-top: 70px;
-				padding: 30px 0;
+				margin-top: 40px;
+				padding: 40px 0;
 				font-size: 2em;
 				width: 80%;
 			}
 
 			.userInterface .button + .button, .pauseMode .button + .button, .lostMode .button + .button {
-				margin-top: 5%;
+				margin-top: 10px;
 			}
 			
 		}
@@ -676,36 +622,52 @@ input[type="text"] {
 	 ***************************************************/
 
 		
-		@media screen and (min-width: 1290px) {
-
+		@media screen and (min-width: 1025px) {
+			
 			.box {
 				height: 150px;
 			}
 
+			.value {
+				font-size: 4em;
+			}
+
+			.userInterface, .lostMode, .pauseMode {
+				padding: 10%;
+			}
+
+			.userInterface > input {
+				font-size: 2em;
+			}
+
+			.userInterface h3, .lostMode h3, .pauseMode h3 {
+				font-size: 2em;
+			}
+
+			.userInterface .button, .lostMode .button, .pauseMode .button {
+				font-size: 1.8em;
+				margin-top: 20px
+			}
+
+			.clear {
+				font-size: 2em;
+				left: 40px;
+			}
+
 			.pause, .play {
-				top: 90px;
-				right: 60px;
+				right: -15px;
+				font-size: 2.5em;
+			}
+
+			.clear, .pause, .play {
+				top: -25px;
 			}
 
 			.strikesHolder {
-				bottom: 150px;
+				left:20px;
+				font-size: 2em;
 			}
 
 		}
-
-		@media screen and (min-width: 1580px) {
-			.pause, .play {
-				right: 75px;
-			}
-			
-			.strikesHolder {
-				left: 100px;
-			}
-		}
-
-
-		
-
-		
 
 		
