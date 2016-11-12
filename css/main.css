@@ -491,11 +491,10 @@ body, div, button, p, h1, h3, h4 {
 		max-width: 1280px;
 		max-height: 600px;
 		margin: auto;
-		overflow: visible;
 	}
 
 	.main-wrapper {
-		margin-top: 10%
+		margin-top: 8%;
 	}
 
 	h1 {
