@@ -2,62 +2,51 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-                <title>Catch! || Alon Tsabari</title>
+		<title>Catch! || Alon Tsabari</title>
 		<link rel="icon" href="images/icon2.jpg" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/animsition.min.css">
 		<link rel="stylesheet" type="text/css" href="css/animate.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-
 	<body class="animsition">
-
-	<div class="mobile">
-	<p>Switch To Mobile-Mode</p>
-	</div>
-
-	<div class="main-wrapper div-stylesheet">
-	 <h1>CATCH</h1>
-	 <button class="info button">Info</button>
-	 <a href="index.html" class="button play">Let's Play!</a>
-	</div>
-
-	<div class="div-info div-stylesheet">
-		 <p class="exit">&cross;</p>
-		 <h3>Instructions:</h3>
-
-		 <div>
-		   <h4>Gameplay :</h4>
-		   <p>Catch the red box before it moves!.<br>Every click on the red box will exceeds your score with 5 points, clicking on the wrong box will decrease your score with 5 points.</p>
-		 </div>
-
-		 <div>
-		   <h4>Time :</h4>
-		   <p><strong>Remember!</strong> each red box has it's limit time before it moves by it self. 3s below 50 points, 2s below 100 points and 1s for greater.</p>
-		   <p><strong>It</strong> also decrease your score with 10 points below 50 points, 15 points below 100 points and 20 points for greater.</p>
+		<div class="mobile">
+			<p>Switch To Mobile-Mode</p>
 		</div>
-	</div>
-
+		<div class="main-wrapper div-stylesheet">
+			<h1>CATCH</h1>
+			<button class="info button">Info</button>
+			<a href="index.html" class="button play">Let's Play!</a>
+		</div>
+		<div class="div-info div-stylesheet">
+			<p class="exit">&cross;</p>
+			<h3>Instructions:</h3>
+			<div>
+				<h4>Gameplay :</h4>
+				<p>Catch the red box before it moves!.<br>Every click on the red box will exceeds your score with 5 points, clicking on the wrong box will decrease your score with 5 points.</p>
+			</div>
+			<div>
+				<h4>Time :</h4>
+				<p><strong>Remember!</strong> each red box has it's limit time before it moves by it self. 3s below 50 points, 2s below 100 points and 1s for greater.</p>
+				<p><strong>It</strong> also decrease your score with 10 points below 50 points, 15 points below 100 points and 20 points for greater.</p>
+			</div>
+		</div>
 		<script src="js/plugins/jquery-1.11.2.min.js"></script>
 		<script src="js/plugins/animsition.min.js"></script>
 	</body>
 	
 	
-
 	<script>
-
 		$('.animsition').animsition({
 			inClass: 'fade-in-right',
-  	        outClass: 'fade-out-left',
+	outClass: 'fade-out-left',
 			linkElement: 'a',
 			inDuration: 600,
 			outDuration: 1000
 		});
-
 		var mainWrapper = document.querySelector('.main-wrapper');
 		var h1 = mainWrapper.querySelector('h1');
 		var h1Content = h1.innerHTML;
-
 		
 		
 		function lettering() {
@@ -66,28 +55,22 @@
 			var count = .5;
 			
 			for(var i = 0; i < h1Content.length; i++) {
- 			letters.push(h1Content[i]);
+			letters.push(h1Content[i]);
 			}
-
 			for(var i = 0; i < letters.length; i++) {
 				html += '<span class="letter">' + letters[i] + '</span>';
 			}
-
 			h1.innerHTML = html;
-
 			for(var i = 0; i < h1.children.length; i++) {
-			 h1.children[i].style.animation = 'sliding .9s ' + count + 's ease-in-out both';
-			 count += .07;
+			h1.children[i].style.animation = 'sliding .9s ' + count + 's ease-in-out both';
+			count += .07;
 			}
 		}
-
 		window.onload = lettering();
 		
-
 		var infoButton = document.querySelector('.info');
 		var infoDiv = document.querySelector('.div-info');
 		var exit = document.querySelector('.exit');
-
 		function goToCenter() {
 			if(infoDiv.style.transform === 'translateY(0%)') {
 				infoDiv.style.transform = 'translateY(-250%)';
@@ -95,9 +78,7 @@
 				infoDiv.style.transform = 'translateY(0%)';
 			}
 		}
-
 		infoButton.addEventListener('click', goToCenter);
 		exit.addEventListener('click', goToCenter);
-
 	</script>
 </html>
