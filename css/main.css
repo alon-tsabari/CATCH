@@ -1,3 +1,6 @@
+/*** FONTS **/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
 
 /*************************************
       GENERAL -------------- GENERAL
@@ -15,7 +18,7 @@
  body {
  	display: flex;
  	background-color: rgb(256,86,77);
- 	font: 1em/1.5 'Arial';
+ 	font: 1em/1.5 'Roboto';
  }
 
 body, div, button, p, h1, h3, h4 {
